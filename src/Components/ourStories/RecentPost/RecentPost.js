@@ -20,7 +20,7 @@ const RecentPost = () => {
         <>
             <h1 className='font-bold pt-3 text-gray-600'>RECENT POST</h1>
             {
-                spinner && <div class="lds-ring absolute inset-2/4"><div></div><div></div><div></div><div></div></div>
+                spinner && <div className="lds-ring absolute inset-2/4"><div></div><div></div><div></div><div></div></div>
             }
             {
                 blogs.map(blog => <section key={Math.random()} className='grid grid-cols-3 gap-3 group hover:bg-gray-100 py-2 cursor-pointer'>

@@ -4,7 +4,7 @@ import { AiOutlineClockCircle } from 'react-icons/ai'
 
 
 const SingleBlog = ({ blog }) => {
-    const { img, author, date, title, desc } = blog;
+    const { img, author, title, content } = blog;
 
     
 
@@ -17,11 +17,11 @@ const SingleBlog = ({ blog }) => {
                 <h2 className='text-lg font-bold text-gray-500'>{title}</h2>
                 <div className="flex justify-between text-sm font-bold text-gray-500 uppercase py-2">
                     <p>BY: {author}</p>
-                    <p><AiOutlineClockCircle className='inline'/> {date}</p>
+                    <p><AiOutlineClockCircle className='inline'/> {new Date().toDateString('dd/mm/yy')}</p>
                     
                 </div>
-                <p className='text-sm text-justify'>{desc} ...</p>
-                <button className='px-3 rounded py-2 bg-gray-100 mt-3 hover:text-red-500 transition duration-500'>Read More...</button>
+                <p className='text-sm text-justify'>{content} ...</p>
+                <button className='px-3 rounded py-2 bg-gray-200 mt-3 hover:text-red-500 transition duration-500'>Read More...</button>
             </div>
         </div>
     );

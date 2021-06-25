@@ -32,7 +32,7 @@ const TopTrending = () => {
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 relative">
                         {
-                            spinner && <div class="lds-ring absolute inset-2/4"><div></div><div></div><div></div><div></div></div>
+                            spinner && <div className="lds-ring absolute inset-2/4"><div></div><div></div><div></div><div></div></div>
                         }
                         {
                             blogs?.map(data => <SingleTopTrend key={data.id} data={data} />)
