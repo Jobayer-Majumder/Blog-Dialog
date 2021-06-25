@@ -1,10 +1,16 @@
 import React from 'react';
+import Header from '../../Components/header/header'
+import OurStories from '../../Components/ourStories/OurStories';
+import TopTrending from '../../Components/topTrending/TopTrending';
+
 
 const Home = () => {
     return (
-        <div>
-            <h4>this is home page</h4>
-        </div>
+        <>
+            <Header />
+            <TopTrending />
+            <OurStories />
+        </>
     );
 };
 
