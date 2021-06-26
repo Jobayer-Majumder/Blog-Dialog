@@ -5,6 +5,8 @@ import {
   Route
 } from 'react-router-dom'
 import Admin from './pages/Admin/Admin';
+import DetailsBlog from './pages/DetailsBlog/DetailsBlog';
+import Auth from './pages/Auth/Auth';
 
 
 
@@ -12,6 +14,12 @@ const App = () => {
   return (
     <Router>
       <Switch>
+        <Route path='/login'>
+          <Auth />
+        </Route>
+        <Route path='/blogDetails/:id'>
+          <DetailsBlog />
+        </Route>
         <Route path='/admin'>
           <Admin />
         </Route>
