@@ -22,7 +22,7 @@ const Blogs = () => {
                     spinner && <div className="lds-ring absolute inset-2/4"><div></div><div></div><div></div><div></div></div>
                 }
                 {
-                    blogs.map(blog => <SingleBlog key={blog.id} blog={blog} />)
+                    blogs.map(blog => <SingleBlog key={blog._id} blog={blog} />)
                 }
             </article>
         </>

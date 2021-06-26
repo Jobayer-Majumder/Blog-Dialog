@@ -35,7 +35,7 @@ const TopTrending = () => {
                             spinner && <div className="lds-ring absolute inset-2/4"><div></div><div></div><div></div><div></div></div>
                         }
                         {
-                            blogs?.map(data => <SingleTopTrend key={data.id} data={data} />)
+                            blogs?.map(data => <SingleTopTrend key={data._id} data={data} />)
                         }
                     </div>
                 </div>

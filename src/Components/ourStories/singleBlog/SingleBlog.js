@@ -1,10 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 import { AiOutlineClockCircle } from 'react-icons/ai'
 
 
 
 const SingleBlog = ({ blog }) => {
-    const { img, author, title, content } = blog;
+    const { img, author, title, content, _id } = blog;
 
     
 
@@ -21,7 +22,9 @@ const SingleBlog = ({ blog }) => {
                     
                 </div>
                 <p className='text-sm text-justify'>{content} ...</p>
-                <button className='px-3 rounded py-2 bg-gray-200 mt-3 hover:text-red-500 transition duration-500'>Read More...</button>
+                <button className='px-3 rounded py-2 bg-gray-200 mt-3 hover:text-red-500 transition duration-500'>
+                    <Link to={`/blogDetails/${_id}`}>Read More...</Link>
+                </button>
             </div>
         </div>
     );
