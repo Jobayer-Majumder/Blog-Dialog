@@ -1,7 +1,12 @@
 import React from 'react';
+import firebase from 'firebase/app'
 import { Link } from 'react-router-dom'
+import firebaseConfig from './firebase.config';
 
 
+if(!firebase.app.length){
+    firebase.initializeApp(firebaseConfig);
+}
 const Login = () => {
     const [inputError, setInputError] = React.useState(null);
     const [loginInfo, setLoginInfo] = React.useState({})
