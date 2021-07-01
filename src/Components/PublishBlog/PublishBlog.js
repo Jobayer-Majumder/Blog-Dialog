@@ -12,7 +12,7 @@ const PublishBlog = () => {
         blogData.title = title;
         blogData.author = author;
         blogData.content = content;
-        blogData.date = new Date();
+        blogData.date = new Date().toDateString('dd/mm/yy');
         blogData.img = imgUrl.display_url;
 
         fetch(`http://localhost:5000/addBlog`, {

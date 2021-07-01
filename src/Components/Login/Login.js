@@ -1,16 +1,22 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import firebase from 'firebase/app'
-import { Link } from 'react-router-dom'
+import { Link, useHistory, useLocation } from 'react-router-dom'
 import firebaseConfig from './firebase.config';
+import { UserContext } from '../../App';
 
 
-if(!firebase.app.length){
+if (!firebase.app.length) {
     firebase.initializeApp(firebaseConfig);
 }
 const Login = () => {
     const [inputError, setInputError] = React.useState(null);
     const [loginInfo, setLoginInfo] = React.useState({})
     const [newUser, setNewUser] = React.useState(false)
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext)
+
+    const history = useHistory();
+    const location = useLocation();
+    const { from } = location.state || { from: { pathname: "/" } };
 
     const handleInput = e => {
         const name = e.target.name;
@@ -73,6 +79,8 @@ const Login = () => {
             }).then(res => res.json()).then(result => {
                 if (result) {
                     alert('User Created Successfully')
+                    setLoggedInUser(loginInfo);
+                    history.replace(from);
                 }
             })
         } else {
@@ -89,6 +97,8 @@ const Login = () => {
         }).then(res => res.json()).then(result => {
             if (result) {
                 alert('Logged successfully')
+                setLoggedInUser(loginInfo);
+                history.replace(from);
             }
         })
     }

@@ -1,4 +1,5 @@
 import React from 'react';
+import { AiOutlineClockCircle } from 'react-icons/ai';
 
 
 const RecentPost = () => {
@@ -29,7 +30,7 @@ const RecentPost = () => {
                     </div>
                     <div className="py-2 col-span-2">
                         <h1 className='text-sm text-gray-500 group-hover:text-red-600'>{blog.title}</h1>
-                        <p className='text-sm text-gray-500'>{blog.date}</p>
+                        <p className='text-sm text-gray-500 font-bold'><AiOutlineClockCircle className='inline'/> {blog.date}</p>
                     </div>
                 </section>
                 )
