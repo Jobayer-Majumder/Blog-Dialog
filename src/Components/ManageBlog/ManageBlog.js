@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { MdDeleteSweep } from 'react-icons/md'
 
 
 const ManageBlog = () => {
@@ -17,16 +17,19 @@ const ManageBlog = () => {
     }, []);
 
     const handleDeleteBlog = id => {
-        fetch(`http://localhost:5000/deleteBlog/${id}`,{
-            method: 'DELETE',
-        })
-        .then(res => res.json())
-        .then(result => {
-            if(result){
-                alert('Blog Deleted')
-            }
-        })
-    }
+        if (window.confirm('Are you sure to delete the blog ?')) {
+            fetch(`http://localhost:5000/deleteBlog/${id}`, {
+                method: 'DELETE',
+            })
+                .then(res => res.json())
+                .then(result => {
+                    if (result) {
+                        alert('Blog Deleted')
+                    }
+                })
+        }
+
+    };
 
 
 
@@ -46,10 +49,10 @@ const ManageBlog = () => {
                     </thead>
                     {
                         blogs.map(blog => <tbody className='text-sm text-center text-gray-500' key={blog._id}>
-                                <td className='py-2'>{blog.title}</td>
-                                <td>{blog.author}</td>
-                                <td>{blog.date}</td>
-                                <td onClick={() => handleDeleteBlog(blog._id)}>Delete</td>
+                            <td className='py-2'>{blog.title}</td>
+                            <td>{blog.author}</td>
+                            <td>{blog.date}</td>
+                            <td onClick={() => handleDeleteBlog(blog._id)} title='Delete Blog'> <MdDeleteSweep className='text-xl ml-3 text-red-600 cursor-pointer' /> </td>
                         </tbody>
                         )
                     }

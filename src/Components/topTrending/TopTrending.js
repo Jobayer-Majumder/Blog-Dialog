@@ -12,7 +12,7 @@ const TopTrending = () => {
         fetch(`http://localhost:5000/getBlogs`)
             .then(res => res.json())
             .then(blogs => {
-                setBlogs(blogs)
+                setBlogs(blogs.splice(0,6))
                 setSpinner(false)
             })
     }, [])
