@@ -1,13 +1,8 @@
 import React, { useContext } from 'react';
-import firebase from 'firebase/app'
 import { Link, useHistory, useLocation } from 'react-router-dom'
-import firebaseConfig from './firebase.config';
 import { UserContext } from '../../App';
 
 
-if (!firebase.app.length) {
-    firebase.initializeApp(firebaseConfig);
-}
 const Login = () => {
     const [inputError, setInputError] = React.useState(null);
     const [loginInfo, setLoginInfo] = React.useState({})
