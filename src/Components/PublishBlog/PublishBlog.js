@@ -62,10 +62,10 @@ const PublishBlog = () => {
                         </div>
                         <div className="pb-5 pt-3">
                             <input type='file' className='py-3 w-full' {...register("image", { required: true })} onChange={handleImageUpload} />
-                            {errors.image && <span className='text-red-500'>This file is required</span>}
+                            {errors.image && <span className='text-red-500'>Cover photo is required</span>}
                         </div>
                     </div>
-                    <input type="submit" className='py-3 w-1/4 cursor-pointer font-bold rounded text-gray-500'/>
+                    <input type="submit" className='py-3 w-1/4 cursor-pointer font-bold rounded text-gray-500' disabled/>
                 </form>
             </section>
         </>

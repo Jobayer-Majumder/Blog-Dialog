@@ -68,6 +68,7 @@ const Login = () => {
             }
         };
     };
+    console.log(loggedInUser)
 
     const handleCreateAccount = e => {
         e.preventDefault()

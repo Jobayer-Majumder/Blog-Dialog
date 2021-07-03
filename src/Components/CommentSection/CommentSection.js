@@ -1,5 +1,6 @@
 import React from 'react';
 import { IoNotificationsOutline } from 'react-icons/io5';
+import { IoIosArrowDropdown } from 'react-icons/io';
 import { FiSend } from 'react-icons/fi';
 import { AiOutlineDislike } from 'react-icons/ai';
 import { AiOutlineLike } from 'react-icons/ai';
@@ -10,16 +11,16 @@ const CommentSection = () => {
         <>
             <section>
                 <div className="">
-                    <div className="py-5">
-                        <h1>The Conversation</h1>
-                        <p>Start a discussion, not a fire. Post with kindness</p>
+                    <div className="py-5 text-gray-500">
+                        <h1 className='text-lg'>The Conversation</h1>
+                        <p className='text-sm'>Start a discussion, not a fire. Post with kindness</p>
                     </div>
-                    <div className="flex justify-between w-full border-t py-5 px-2">
-                        <h4>Sort By - <span className='font-bold'>Best</span> </h4>
+                    <div className="flex justify-between w-full border-t text-gray-500 py-5 px-2">
+                        <h4 className='text-sm md:text-lg'>Sort By - <span className='font-bold'>Best</span> <IoIosArrowDropdown className='inline text-lg' /> </h4>
                         <div className="flex">
-                            <p>have a discuss account ? </p>
-                            <IoNotificationsOutline className='inline'/>
-                            <button className="px-3">Login</button>
+                            <p className='px-2 text-sm md:text-lg'>have a discuss account ? </p>
+                            <IoNotificationsOutline className='inline text-lg'/>
+                            <button className="px-3 text-sm md:text-lg">Login</button>
                         </div>
                     </div>
                     <div className="px-2 py-4 flex">

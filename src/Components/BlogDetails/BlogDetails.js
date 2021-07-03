@@ -19,7 +19,7 @@ const BlogDetails = () => {
     }, [id])
 
 
-    const { img, title, author, content, date } = blog;
+    const { img, title, author, date } = blog;
 
     return (
         <>
@@ -54,7 +54,7 @@ const BlogDetails = () => {
                         </button>
                     </div>
                 </div>
-                <div className="comment-box container mx-auto h-screen">
+                <div className="container mx-auto h-screen">
                     <CommentSection />
                 </div>
             </section>
